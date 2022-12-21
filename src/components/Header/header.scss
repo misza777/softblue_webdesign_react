@@ -1,0 +1,12 @@
+@use "../../scss/abstracts" as *;
+
+.navbar {
+    &_brand {
+        color: $clr-main-primary;
+    }
+    
+    &_brand:hover {
+        color: $clr-main-secondary;
+    };
+
+}

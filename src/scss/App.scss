@@ -1,0 +1,11 @@
+@use './abstracts' as *;
+
+
+body {
+  font-family: $ff-body;
+  font-weight: $fw-regular;
+  background-color: $clr-bcg-primary;
+  color: $clr-main-primary;
+}
+
+

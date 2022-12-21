@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap");
+#root {
+  /* colors */
+  --clr-bcg-primary: #06101A;
+  --clr-bcg-secondary: #063345;
+  --clr-main-primary: #F9F9F8;
+  --clr-main-secondary: #00BBD5;
+  /* fonts */
+  --ff-primary: Poppins, sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  background-color: var(--clr-bcg-primary);
+  color: var(--clr-main-primary);
+}/*# sourceMappingURL=App.css.map */
