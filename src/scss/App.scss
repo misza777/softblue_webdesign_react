@@ -8,4 +8,19 @@ body {
   color: $clr-main-primary;
 }
 
+.btn-my-primary {
+  border: none;
+  outline: none;
+  background-color: $clr-main-secondary;
+  border-radius: 0;
+  &:hover {
+    background-color: $clr-main-primary;
+    color: $clr-main-secondary;
+  } 
+};
+
+.clr-primary {
+  color: $clr-main-primary;
+}
+
 

@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap");
-body {
-  font-family: Poppins, sans-serif;
-  font-weight: var(--fw-regular);
-  background-color: #06101A;
+.footer {
+  background-color: #00BBD5;
   color: #F9F9F8;
+  font-size: 0.8rem;
+}
+.footer a {
+  font-weight: 700;
+  color: #F9F9F8;
+}
+.footer a:hover {
+  color: #063345;
 }/*# sourceMappingURL=footer.css.map */

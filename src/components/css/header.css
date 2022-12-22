@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap");
-.navbar_brand {
+.my-header {
   color: #F9F9F8;
 }
-.navbar_brand:hover {
+
+.my-link {
+  color: #F9F9F8;
+}
+.my-link:hover {
   color: #00BBD5;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
+button.navbar-toggler {
+  color: #F9F9F8;
+  margin-left: auto;
+}
+button.navbar-toggler > span {
+  color: #F9F9F8 !important;
 }/*# sourceMappingURL=header.css.map */

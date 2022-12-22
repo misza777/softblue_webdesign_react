@@ -4,4 +4,19 @@ body {
   font-weight: 400;
   background-color: #06101A;
   color: #F9F9F8;
+}
+
+.btn-my-primary {
+  border: none;
+  outline: none;
+  background-color: #00BBD5;
+  border-radius: 0;
+}
+.btn-my-primary:hover {
+  background-color: #F9F9F8;
+  color: #00BBD5;
+}
+
+.clr-primary {
+  color: #F9F9F8;
 }/*# sourceMappingURL=App.css.map */

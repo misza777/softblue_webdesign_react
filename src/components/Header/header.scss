@@ -1,12 +1,22 @@
 @use "../../scss/abstracts" as *;
 
-.navbar {
-    &_brand {
-        color: $clr-main-primary;
-    }
+.my-header {
+    color: $clr-main-primary;
     
-    &_brand:hover {
-        color: $clr-main-secondary;
-    };
+}
 
+.my-link{
+    color: $clr-main-primary;
+    &:hover {
+        color: $clr-main-secondary;
+        text-decoration-line: line-through;
+    }
+}
+
+button.navbar-toggler {
+    color: $clr-main-primary;
+    margin-left:auto;
+   & > span {
+       color: $clr-main-primary !important;
+   } 
 }
