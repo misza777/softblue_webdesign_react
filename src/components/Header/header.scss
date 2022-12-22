@@ -7,15 +7,17 @@
 
 .my-link{
     color: $clr-main-primary;
-    &:hover {
-        color: $clr-main-secondary;
+    &:hover, &:focus, &:active {
+        color: $clr-main-secondary !important;
         text-decoration-line: line-through;
+        border: 0;
+        outline:0;
     }
 }
 
 button.navbar-toggler {
     color: $clr-main-primary;
-    margin-left:auto;
+    // margin-left:auto;
    & > span {
        color: $clr-main-primary !important;
    } 

@@ -1,0 +1,10 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 81" width="81" height="81">
+	<title>Polygon 1</title>
+	<style>
+		.s0 {
+			fill: none;
+			stroke: #ffffff
+		}
+	</style>
+	<path id="Polygon 1" class="s0" d="m63.7 80.3l-63-16.9 16.9-63.1 63 16.9z" />
+</svg>

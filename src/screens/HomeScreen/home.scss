@@ -1,0 +1,70 @@
+@use "../../scss/abstracts" as *;
+
+
+.home-container {
+    height: 84vh;
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    // grid-template-rows: 1fr;
+    position: relative;
+    background-image: 
+    url('/images/Shape_waves_2.svg'),
+    url('/images/Shape_waves_1.svg');
+    background-size: 8%, 8%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 72% 32%, -10% 1%, ;
+    
+    & .hero-img {
+        transform: scale(.85) translateX(8%) translateY(-8.5%);
+        grid-column: 2/3;
+        place-self: end;
+        z-index: 100;
+    }
+
+    &::before {
+        content: url('/images/Polygon_1.svg');
+        color: $clr-main-secondary;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        z-index: -1;
+    }
+    
+    &::after {
+        content: url('/images/Polygon_2.svg');
+        color: $clr-main-secondary;
+        position: absolute;
+        top: 70%;
+        left: 40%;
+        z-index: -1;
+    }
+
+.hero-text {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    place-self: center;
+    z-index: 100;
+    padding: 0 2rem;
+    // text-align: center;
+    h1 {
+        font-size: 2.5rem;
+        font-weight: $fw-bold;
+        color: $clr-main-primary;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-size: 1.2rem;
+        font-weight: $fw-regular;
+        color: $clr-main-primary;
+        margin-bottom: 1rem;
+    }
+    // .btn-my-primary {
+        // margin: 0 auto;
+    // }
+}
+}
+
+// content: url('../../media/warning.svg');
+//     display: inline-block;
+//     width: 12px;
+//     height: 12px;

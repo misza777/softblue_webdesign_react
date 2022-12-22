@@ -6,15 +6,16 @@
 .my-link {
   color: #F9F9F8;
 }
-.my-link:hover {
-  color: #00BBD5;
+.my-link:hover, .my-link:focus, .my-link:active {
+  color: #00BBD5 !important;
   -webkit-text-decoration-line: line-through;
           text-decoration-line: line-through;
+  border: 0;
+  outline: 0;
 }
 
 button.navbar-toggler {
   color: #F9F9F8;
-  margin-left: auto;
 }
 button.navbar-toggler > span {
   color: #F9F9F8 !important;

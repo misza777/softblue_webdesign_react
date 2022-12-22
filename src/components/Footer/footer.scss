@@ -1,15 +1,14 @@
 @use "../../scss/abstracts" as *;
 
 .footer {
+    // height: 10vh;
     background-color: $clr-main-secondary;
     color: $clr-main-primary;
-    // padding: 1rem;
-    // text-align: center;
     font-size: 0.8rem;
     a {
         font-weight: $fw-bold;
         color: $clr-main-primary;
-        &:hover {
+        &:hover{
             color: $clr-bcg-secondary;
         }
     }

@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="py-4 clr-main-primary">
+      <main className=" clr-main-primary position-relative">
         <Container>
           <Routes>
             <Route path="/" element={<HomeScreen />} />

@@ -1,38 +1,52 @@
 import React from "react";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import "./header.scss";
 
 const Header = () => {
   return (
-    <Navbar collapseOnSelect expand="md" variant="dark" className="px-lg-4">
+    <Navbar
+      expand="md"
+      variant="dark"
+      className="px-sm-2 px-lg-5 m-lg-4 mx-xl-5 my-xl-1"
+    >
       <Container>
-        <Nav.Link to="/">
+        <LinkContainer to="/">
           <Navbar.Brand className="navbar_brand pe-xs-2">
             <img
               alt="company logo"
-              src="images/logo.jpg"
+              src="images/new_logo.png"
               // width="30"
               // height="30"
               className="d-inline-block"
             />
           </Navbar.Brand>
-
-        </Nav.Link>
-          <Navbar.Toggle className="" aria-controls="responsive-navbar-nav" />
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav" className="clr-primary">
           <Nav className="ms-auto">
-            <Nav.Link className="mx-3 my-link" to="/home">
-              Home
-            </Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link
+                active
+                className="mx-3 my-link"
+                aria-current="page"
+                to="/home"
+              >
+                Home
+              </Nav.Link>
+            </LinkContainer>
 
-            <Nav.Link className="mx-3 my-link" to="/services">
-              Link
-            </Nav.Link>
-
-            <Nav.Link className="mx-3 my-link" to="/experience">
-              Experience
-            </Nav.Link>
+            <LinkContainer to="/services">
+              <Nav.Link className="mx-3 my-link" to="/services">
+                Link
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/experience">
+              <Nav.Link className="mx-3 my-link" to="/experience">
+                Experience
+              </Nav.Link>
+            </LinkContainer>
 
             <Button className="btn-my-primary px-4 ml-3">Contact Us</Button>
           </Nav>

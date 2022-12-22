@@ -6,7 +6,34 @@ body {
   font-weight: $fw-regular;
   background-color: $clr-bcg-primary;
   color: $clr-main-primary;
+  min-width: 270px;
+  height: 100vh;
+  overflow-x: hidden;
+
+  
+
+
+ &::before {
+    content: url('/images/shape_dots.png');
+    color: $clr-main-secondary;
+    position: absolute;
+    top: 70%;
+    left: -.5%;
+    z-index: -3;
 }
+
+ &::after {
+    content: url('/images/shape_dots.png');
+    color: $clr-main-secondary;
+    position: absolute;
+    top: -2%;
+    right: -.5%;
+    z-index: -3;
+
+}
+}
+
+
 
 .btn-my-primary {
   border: none;

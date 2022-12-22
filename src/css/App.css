@@ -4,6 +4,25 @@ body {
   font-weight: 400;
   background-color: #06101A;
   color: #F9F9F8;
+  min-width: 270px;
+  height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: url("/images/shape_dots.png");
+  color: #00BBD5;
+  position: absolute;
+  top: 70%;
+  left: -0.5%;
+  z-index: -3;
+}
+body::after {
+  content: url("/images/shape_dots.png");
+  color: #00BBD5;
+  position: absolute;
+  top: -2%;
+  right: -0.5%;
+  z-index: -3;
 }
 
 .btn-my-primary {
@@ -19,4 +38,4 @@ body {
 
 .clr-primary {
   color: #F9F9F8;
-}/*# sourceMappingURL=App.css.map */
+}
