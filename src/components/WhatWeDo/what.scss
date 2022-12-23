@@ -43,8 +43,22 @@
             color: $clr-main-primary;
         }
     }
- p {
+
+    p {
     width: 100%;
  }
 
+.card-title {
+    font-size: $fs-secondary-preheading;
+    font-weight: $fw-bold;
+    margin-bottom: 1em;
+    text-align: center;
+    }
+
+    .card-text {
+        font-size: $fs-p;
+        line-height: $lh-p;
+        text-align: center;
+    }
 }
+
