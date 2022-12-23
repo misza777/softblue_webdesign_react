@@ -1,5 +1,6 @@
 {
   "name": "soft_blue_web_design_react",
+  "homepage":"https://misza777/gihub.io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +9,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "sass": "sass src/scss:src/css --watch --no-source-map",
-    "start": "concurrently \"npm run dev\" \"npm run sass\""
+    "start": "concurrently \"npm run dev\" \"npm run sass\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^1.2.1",
@@ -25,6 +28,7 @@
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "concurrently": "^7.6.0",
+    "gh-pages": "^4.0.0",
     "sass": "^1.57.1",
     "vite": "^4.0.0"
   }
