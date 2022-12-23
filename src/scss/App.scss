@@ -14,23 +14,22 @@ body {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
     position: absolute;
-    top: 70%;
+    bottom: -2%;
     left: -.5%;
     z-index: -3;
-}
-
- &::after {
+    transform: scale(.8)
+  }
+  
+  &::after {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
     position: absolute;
-    top: -2%;
-    right: -.5%;
+    top: -3%;
+    right: -1%;
     z-index: -3;
-
+    transform: scale(.8)
 }
 }
-
-
 
 .btn-my-primary {
   border: none;
@@ -43,8 +42,28 @@ body {
   } 
 };
 
+.btn-my-secondary {
+  border: 1px solid $clr-main-primary;
+  // outline: none;
+  background-color: transparent;
+  border-radius: 0;
+  color: $clr-main-primary;
+  &:hover {
+    background-color: $clr-main-primary;
+    color: $clr-main-secondary;
+  } 
+};
+
 .clr-primary {
   color: $clr-main-primary;
+}
+
+.clr-secondary {
+  color: $clr-main-secondary;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 

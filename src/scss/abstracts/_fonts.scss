@@ -7,3 +7,28 @@ $ff-heading: $ff-primary;
 $fw-regular: 400;
 $fw-semi-bold: 500;
 $fw-bold: 700;
+
+// 13px
+$fs-300: 0.8125rem; 
+// 14px
+$fs-400: 0.875rem; 
+// 15px
+$fs-500: 0.9375rem;
+//  16px
+$fs-600: 1rem;
+// 24px
+$fs-700: 2rem;
+// 36px
+$fs-800: 2.26rem;
+// 56px
+$fs-900: 3.5rem;
+
+$fs-p: $fs-300;
+// $fs-primary-heading: $fs-800;
+$fs-secondary-preheading: $fs-600;
+$fs-secondary-heading: $fs-700;
+// $fs-nav: $fs-500;
+$fs-button: $fs-600;
+
+//line-height
+$lh-p: 1.5rem;

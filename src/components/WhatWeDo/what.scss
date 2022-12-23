@@ -1,0 +1,50 @@
+@use "../../scss/abstracts" as *;
+
+.container-what {
+    color: $clr-main-primary;
+    h2 {
+        font-size: $fs-secondary-heading;
+        font-weight: $fw-bold;
+        margin-bottom: 1em;
+    }
+
+    h3 {
+        font-size: $fs-secondary-preheading;
+        font-weight: $fw-bold;
+    }
+    p {
+        line-height: $lh-p;
+        font-size: $fs-p;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.card {
+    background-color: $clr-bcg-primary;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .icon-container {
+    height:80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: $clr-main-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    
+        .icon {
+            font-size: 2rem;
+            color: $clr-main-primary;
+        }
+    }
+ p {
+    width: 100%;
+ }
+
+}
