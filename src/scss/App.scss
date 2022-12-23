@@ -10,9 +10,6 @@ body {
   height: 100vh;
   overflow-x: hidden;
 
-  
-
-
  &::before {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;

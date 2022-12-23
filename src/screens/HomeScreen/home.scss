@@ -5,14 +5,13 @@
     height: 84vh;
     display: grid;
     grid-template-columns: 60% 1fr;
-    // grid-template-rows: 1fr;
     position: relative;
     background-image: 
     url('/images/Shape_waves_2.svg'),
     url('/images/Shape_waves_1.svg');
     background-size: 8%, 8%;
     background-repeat: no-repeat, no-repeat;
-    background-position: 72% 32%, -10% 1%, ;
+    background-position: 72% 32%, 0% 0%;
     
     & .hero-img {
         transform: scale(.85) translateX(8%) translateY(-8.5%);
@@ -42,12 +41,11 @@
 .hero-text {
     grid-column: 1/2;
     grid-row: 1/2;
-    place-self: center;
+    place-self: center left;
     z-index: 100;
-    padding: 0 2rem;
-    // text-align: center;
+    
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: $fw-bold;
         color: $clr-main-primary;
         margin-bottom: 1rem;

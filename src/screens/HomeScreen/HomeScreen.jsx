@@ -6,7 +6,7 @@ import "./home.scss";
 const HomeScreen = () => {
   return (
     <>
-      <div className="m-lg-2 home-container">
+      <div className="m-lg-2 mx-xl-5 px-xl-4 home-container">
         <img
           src="images/hero.png"
           className="hero-img"
