@@ -26,7 +26,7 @@ const Header = () => {
 
         <Navbar.Collapse id="responsive-navbar-nav" className="clr-primary">
           <Nav className="ms-auto">
-            <LinkContainer to="/">
+            <LinkContainer to="/" active>
               <Nav.Link
                 active
                 className="mx-3 my-link"
@@ -39,7 +39,7 @@ const Header = () => {
 
             <LinkContainer to="/services">
               <Nav.Link className="mx-3 my-link" to="/services">
-                Link
+                Services
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/experience">

@@ -1,0 +1,35 @@
+@use "../../scss/abstracts" as *;
+
+.container-experience {
+    color: $clr-main-primary;
+
+}
+
+.card-exp {
+    box-shadow: 0px 0px 3px 7px rgba(0,0,0,0.66);
+-webkit-box-shadow: 0px 0px 3px 7px rgba(0,0,0,0.66);
+-moz-box-shadow: 0px 0px 3px 7px rgba(0,0,0,0.66);
+
+&_icon {
+    height:2.5rem;
+    width: 2.5rem;
+    margin-right: 1rem;
+    background-color: $clr-main-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    }
+
+    &_position {
+        font-weight: $fw-semi-bold;
+    }
+
+    p {
+    width: 100%;
+ }
+}
+
+.card-body_text {
+    text-align: left !important;
+}

@@ -66,4 +66,25 @@ body {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: $fs-secondary-heading;
+  font-weight: $fw-bold;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: $fs-secondary-preheading;
+  font-weight: $fw-bold;
+}
+
+p {
+  line-height: $lh-p;
+  font-size: $fs-p;
+}
+
+.description {
+  width: 80%;
+  margin: 0 auto;
+}
+
 

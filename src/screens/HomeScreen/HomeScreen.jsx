@@ -3,6 +3,7 @@ import Comments from "../../components/Comments/Comments";
 import Form from "../../components/Form/Form";
 import "./home.scss";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
+import Experience from "../../components/Experience/Experience";
 
 const HomeScreen = () => {
   return (
@@ -40,6 +41,7 @@ const HomeScreen = () => {
         />
       </div>
       <WhatWeDo />
+      <Experience />
       <Comments />
       <Form />
     </>

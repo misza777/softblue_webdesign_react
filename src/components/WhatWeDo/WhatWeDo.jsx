@@ -36,7 +36,7 @@ const WhatWeDo = () => {
     >
       <h3 className="text-uppercase clr-secondary">What we do</h3>
       <h2>Better Services For You</h2>
-      <p className="pb-xl-4">
+      <p className="description p-md-4 p-lg-4">
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
         using Lorem Ipsum is that it has
@@ -45,7 +45,7 @@ const WhatWeDo = () => {
       <Row xs={1} md={3} className="g-3 my-sm-2 my-md-3 m-lg-3 mx-xl-5 px-xl-4">
         {cardsInfo.map((c, idx) => (
           <Col className="mt-xs-4" key={idx}>
-            <Card className=" card">
+            <Card className="card">
               {/* <Card.Img variant="top" src={c.image} /> */}
               <div className="icon-container">
                 <div className="icon">{c.icon}</div>

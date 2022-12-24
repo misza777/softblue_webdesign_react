@@ -1,0 +1,31 @@
+@use "../../scss/abstracts" as *;
+
+
+.pagination__item {
+    display: inline-block;
+    padding-inline: .3em;
+}
+
+.page-item.active .page-link {
+    color: $clr-main-primary;
+    background-color: $clr-main-secondary;
+    border: none;
+}
+.page-item .page-link {
+    color: $clr-main-primary;
+    background-color: $clr-bcg-secondary;
+    color: $clr-main-primary;
+    border: none;
+}
+
+.page-item:last-child .page-link,
+.page-item:first-child .page-link
+ {
+    border-radius: 0;
+}
+
+// .page-item:focus .page-link
+// {
+//     border: none;
+//     outline: none;
+// }

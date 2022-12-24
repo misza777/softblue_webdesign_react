@@ -60,3 +60,24 @@ body::after {
 .uppercase {
   text-transform: uppercase;
 }
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+}
+
+.description {
+  width: 80%;
+  margin: 0 auto;
+}
