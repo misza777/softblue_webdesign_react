@@ -44,25 +44,29 @@ const Comments = () => {
   return (
     <div className="comments-container">
       <Container>
-        <Col md={7} className="mx-auto p-md-5">
+        <Col md={6} className="mx-auto py-4">
           <div className="d-flex justify-content-between">
             <h2 className="text-center mb-5">Comments</h2>
-            <div>oldest | newest</div>
+            <p>oldest | newest</p>
           </div>
-          {comments.map((comment) => (
-            <div className="comments pb-5">
-              <div className="comment">
+          <div className="comments">
+            {comments.map((comment) => (
+              <div key={crypto.randomUUID()} className="comment pb-3">
                 <div className="comment__content">
-                  <div className="comment__content-date">{comment.date}</div>
-                  <div className="d-inline-flex">
-                    <h3 className="comment__content-name">{comment.name}</h3>{" "}
-                    <h3 className="comment__content-email">{comment.email}</h3>
+                  <div className="comment__content-dat pb-2">
+                    {comment.date}
+                  </div>
+                  <div className="comment__content_title d-flex justify-content-start g-2 pb-2">
+                    <h3 className="comment__content-name ">{comment.name}</h3>
+                    <h3 className="comment__content-email px-3">
+                      {comment.email}
+                    </h3>
                   </div>
                   <p className="comment__content-text">{comment.text}</p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
           <Pagination className="mt-5">{items}</Pagination>
         </Col>
       </Container>

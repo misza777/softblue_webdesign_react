@@ -4,7 +4,6 @@ body {
   font-weight: 400;
   color: #F9F9F8;
   min-width: 270px;
-  height: 100vh;
   overflow-x: hidden;
 }
 body::before {

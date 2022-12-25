@@ -3,8 +3,11 @@
 
 .comments-container {
     background-color: $clr-bcg-primary-dark;
+    h2 {
+        font-size: $fs-600; 
+    }
 }
-
+//pagination styles
 .pagination__item {
     display: inline-block;
     padding-inline: .3em;
@@ -27,9 +30,3 @@
  {
     border-radius: 0;
 }
-
-// .page-item:focus .page-link
-// {
-//     border: none;
-//     outline: none;
-// }

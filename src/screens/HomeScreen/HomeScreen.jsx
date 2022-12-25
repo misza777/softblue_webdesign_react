@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Comments from "../../components/Comments/Comments";
-import Form from "../../components/Form/Form";
+import MessageForm from "../../components/MessageForm/MessageForm";
 import "./home.scss";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import Experience from "../../components/Experience/Experience";
@@ -48,7 +48,7 @@ const HomeScreen = () => {
       <WhatWeDo />
       <Experience />
       <Comments />
-      <Form />
+      <MessageForm />
     </>
   );
 };
