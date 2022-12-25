@@ -1,12 +1,11 @@
 @use "../../scss/abstracts" as *;
 
-.container-what {
-    color: $clr-main-primary;
-   
+.container-what-bcg {
+    background-color: $clr-bcg-primary-dark;
 }
 
 .card {
-    background-color: $clr-bcg-primary;
+    background-color: inherit;
     border: none;
     transition: all 0.3s ease-in-out;
     &:hover {

@@ -41,44 +41,51 @@ const Experience = () => {
   ];
   return (
     <>
-      <Col
-        className="container-experience 
-    mx-md-5 
+      <div className="container-exp-bcg">
+        <Container>
+          <Col
+            className=" 
     px-md-5 
-    mx-xl-5 
-    my-xl-5 
     text-center"
-      >
-        <h3 className="text-uppercase clr-secondary">Qualifications</h3>
-        <h2>My Experience</h2>
-        <p className="description py-md-4 py-lg-4">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has
-        </p>
-      </Col>
-      <Row xs={1} md={2} className="g-4 mx-xl-5">
-        {cardExpInfo.map((card) => (
-          <Col key={card.id}>
-            <Card className="card-exp">
-              <Card.Header>
-                <div className="d-flex justify-content-start">
-                  <div className="card-exp_icon">{card.icon}</div>
-                  <div className="d-flex-column">
-                    <h3 className="card-exp_position">{card.position}</h3>
-                    <div className="exp-card-time text-muted ">{card.time}</div>
-                  </div>
-                </div>
-              </Card.Header>
-
-              <Card.Body className="card-body_text">
-                <Card.Title className="card-body_text">{card.title}</Card.Title>
-                <Card.Text className="card-body_text">{card.text}</Card.Text>
-              </Card.Body>
-            </Card>
+          >
+            <h3 className="text-uppercase clr-secondary">Qualifications</h3>
+            <h2>My Experience</h2>
+            <p className="description py-md-4 py-lg-4">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has
+            </p>
           </Col>
-        ))}
-      </Row>
+          <Row xs={1} md={2} className="g-4 px-xl-5">
+            {cardExpInfo.map((card) => (
+              <Col key={card.id}>
+                <Card className="card-exp">
+                  <Card.Header>
+                    <div className="d-flex justify-content-start">
+                      <div className="card-exp_icon">{card.icon}</div>
+                      <div className="d-flex-column">
+                        <h3 className="card-exp_position">{card.position}</h3>
+                        <div className="exp-card-time text-muted ">
+                          {card.time}
+                        </div>
+                      </div>
+                    </div>
+                  </Card.Header>
+
+                  <Card.Body className="card-body_text">
+                    <Card.Title className="card-body_text">
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text className="card-body_text">
+                      {card.text}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
     </>
   );
 };

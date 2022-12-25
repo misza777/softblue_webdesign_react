@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Pagination } from "react-bootstrap";
+import { Col, Pagination, Container } from "react-bootstrap";
 import "./comments.scss";
 
 const Comments = () => {
@@ -42,27 +42,31 @@ const Comments = () => {
   ];
 
   return (
-    <Col md={7} className="mx-auto p-md-5">
-      <div className="d-flex justify-content-between">
-        <h2 className="text-center mb-5">Comments</h2>
-        <div>oldest | newest</div>
-      </div>
-      {comments.map((comment) => (
-        <div className="comments pb-5">
-          <div className="comment">
-            <div className="comment__content">
-              <div className="comment__content-date">{comment.date}</div>
-              <div className="d-inline-flex">
-                <h3 className="comment__content-name">{comment.name}</h3>{" "}
-                <h3 className="comment__content-email">{comment.email}</h3>
-              </div>
-              <p className="comment__content-text">{comment.text}</p>
-            </div>
+    <div className="comments-container">
+      <Container>
+        <Col md={7} className="mx-auto p-md-5">
+          <div className="d-flex justify-content-between">
+            <h2 className="text-center mb-5">Comments</h2>
+            <div>oldest | newest</div>
           </div>
-        </div>
-      ))}
-      <Pagination className="mt-5">{items}</Pagination>
-    </Col>
+          {comments.map((comment) => (
+            <div className="comments pb-5">
+              <div className="comment">
+                <div className="comment__content">
+                  <div className="comment__content-date">{comment.date}</div>
+                  <div className="d-inline-flex">
+                    <h3 className="comment__content-name">{comment.name}</h3>{" "}
+                    <h3 className="comment__content-email">{comment.email}</h3>
+                  </div>
+                  <p className="comment__content-text">{comment.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+          <Pagination className="mt-5">{items}</Pagination>
+        </Col>
+      </Container>
+    </div>
   );
 };
 

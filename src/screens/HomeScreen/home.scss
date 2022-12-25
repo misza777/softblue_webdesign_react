@@ -1,5 +1,8 @@
 @use "../../scss/abstracts" as *;
 
+.bcg-home {
+    background-color: $clr-bcg-primary-light;
+}
 
 .home-container {
     height: 84vh;

@@ -1,8 +1,7 @@
 @use "../../scss/abstracts" as *;
 
-.my-header {
-    color: $clr-main-primary;
-    
+.header-bcg {
+    background-color: $clr-bcg-primary-light; 
 }
 
 .my-link{

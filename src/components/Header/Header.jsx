@@ -8,7 +8,7 @@ const Header = () => {
     <Navbar
       expand="md"
       variant="dark"
-      className="px-sm-2 px-lg-5 m-lg-4 mx-xl-5 my-xl-1"
+      className="header-bcg px-sm-2 px-lg-5"
     >
       <Container>
         <LinkContainer to="/">

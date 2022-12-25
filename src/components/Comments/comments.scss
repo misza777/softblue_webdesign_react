@@ -1,6 +1,10 @@
 @use "../../scss/abstracts" as *;
 
 
+.comments-container {
+    background-color: $clr-bcg-primary-dark;
+}
+
 .pagination__item {
     display: inline-block;
     padding-inline: .3em;

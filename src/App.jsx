@@ -12,16 +12,14 @@ function App() {
   return (
     <>
       <Header />
-      <main className=" clr-main-primary position-relative">
-        <Container>
+      {/* <main className="clr-main-primary position-relative"> */}
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/experience" element={<ExperienceScreen />} />
             <Route path="/services" element={<ServicesScreen />} />
             {/* <Route path="/writeus" element={<ServicesScreen />} /> */}
           </Routes>
-        </Container>
-      </main>
+      {/* </main> */}
       <Footer />
     </>
   );
