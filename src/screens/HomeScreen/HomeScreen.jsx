@@ -13,7 +13,7 @@ const HomeScreen = () => {
         <Container>
           <div className=" px-xl-4 home-container">
             <img
-              src="images/hero.png"
+              src="images/heroFoto.png"
               className="hero-img"
               alt="man smiling and looking in the bright future"
             />

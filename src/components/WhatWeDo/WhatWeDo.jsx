@@ -1,29 +1,48 @@
-import React from "react";
-import { Col, Button, Row, Card, Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Col, Row, Card, Container } from "react-bootstrap";
 import { BsHeadset, BsHeart, BsLaptop } from "react-icons/bs";
+import axios from "axios";
 import "./what.scss";
 
 const WhatWeDo = () => {
-  const cardsInfo = [
+  const [services, setServices] = useState([
     {
-      id: 1,
-      title: "FULLY RESPONSIVE",
-      text: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      icon: <BsLaptop />,
+      id: "",
+      name: "",
+      description: "",
     },
-    {
-      id: 2,
-      title: "UI/UX Designer",
-      text: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      icon: <BsHeart />,
-    },
-    {
-      id: 3,
-      title: "24/7 Support",
-      text: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      icon: <BsHeadset />,
-    },
-  ];
+  ]);
+
+  const fetchURL =
+    "https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/services";
+  const cancelToken = axios.CancelToken.source();
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      await axios
+        .get(fetchURL, { cancelToken: cancelToken.token })
+        .then((res) => {
+          const response = res.data;
+          if (response.length > 0) {
+            const icons = [<BsLaptop />, <BsHeart />, <BsHeadset />];
+            const responseWithIcons = response.map((service) => {
+              return {
+                ...service,
+                icon: icons[service.id - 1],
+              };
+            });
+            setServices(responseWithIcons);
+          }
+        })
+        .catch((err) => {
+          if (axios.isCancel(err)) {
+            console.log("axios cancelled fetching data!");
+          }
+        });
+    };
+
+    fetchServices();
+  }, []);
 
   return (
     <div className="container-what-bcg">
@@ -42,15 +61,15 @@ const WhatWeDo = () => {
           </p>
 
           <Row xs={1} md={3} className="g-3 px-xl-4">
-            {cardsInfo.map((c, idx) => (
-              <Col className="mt-xs-4" key={idx}>
+            {services.map((s) => (
+              <Col className="mt-xs-4" key={s.id}>
                 <Card className="card">
                   <div className="icon-container">
-                    <div className="icon">{c.icon}</div>
+                    <div className="icon">{s.icon}</div>
                   </div>
                   <Card.Body>
-                    <Card.Title className="card-title">{c.title}</Card.Title>
-                    <Card.Text className="card-text">{c.text}</Card.Text>
+                    <Card.Title className="card-title text-uppercase">{s.name}</Card.Title>
+                    <Card.Text className="card-text">{s.description}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

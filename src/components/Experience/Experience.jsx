@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Col, Row, Container } from "react-bootstrap";
 import "./experience.scss";
-import { FaBehanceSquare, FaBasketballBall } from "react-icons/fa";
+import { FaBehanceSquare, FaBasketballBall, FaReact } from "react-icons/fa";
 import axios from "axios";
 
 const Experience = () => {
@@ -26,25 +26,34 @@ const Experience = () => {
         .then((res) => {
           const response = res.data;
           if (response.length > 0) {
-              const icons = [<FaBehanceSquare />, <FaBasketballBall />];
-              const responseWithIcons = response.map((exp) => {
-                  return { ...exp, icon: (exp.company) === "Behancer" ? <FaBehanceSquare /> : <FaBasketballBall /> };
-                });
-                setExperiences(responseWithIcons);
+            const icons = [<FaBehanceSquare />, <FaBasketballBall />];
+            const responseWithIcons = response.map((exp) => {
+              return {
+                ...exp,
+                icon:
+                  exp.company === "Behancer" ? (
+                    <FaBehanceSquare />
+                  ) : exp.company === "Dribbble" ? (
+                    <FaBasketballBall />
+                  ) : (
+                    <FaReact />
+                  ),
+              };
+            });
+            setExperiences(responseWithIcons);
           }
         })
         .catch((err) => {
-            if (axios.isCancel(err)) {
-                console.log("axios cancelled fetching data!");
+          if (axios.isCancel(err)) {
+            console.log("axios cancelled fetching data!");
           }
         });
     };
-    
+
     fetchExperiences();
-}, []);
+  }, []);
 
-
-return (
+  return (
     <>
       <div className="container-exp-bcg">
         <Container>
@@ -96,4 +105,3 @@ return (
 };
 
 export default Experience;
-
