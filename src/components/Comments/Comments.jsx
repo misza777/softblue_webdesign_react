@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Pagination, Container } from "react-bootstrap";
 import "./comments.scss";
+import axios from "axios";
 
 const Comments = () => {
+  const [comments, setComments] = useState([
+    {
+      name: "",
+      email: "",
+      content: "",
+      createdAt: "",
+      id: "",
+    },
+  ]);
+  //fetching data from mockapi
+  const fetchURL =
+    "https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/comments";
+
+  // good practice to cancel axios request
+  const cancelToken = axios.CancelToken.source();
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      await axios
+        .get(fetchURL, { cancelToken: cancelToken.token })
+        .then((res) => {
+          setComments(res.data);
+        })
+        .catch((err) => {
+          if (axios.isCancel(err)) {
+            console.log("axios cancelled fetching data!");
+          }
+        });
+    };
+
+    fetchComments();
+  }, []);
+
+  //pagination
   let active = 2;
   let items = [];
   for (let number = 1; number <= 5; number++) {
@@ -16,30 +51,6 @@ const Comments = () => {
       </Pagination.Item>
     );
   }
-
-  const comments = [
-    {
-      id: 1,
-      name: "John Doe",
-      date: "Jun 13, 2017",
-      email: "jon@example.com",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quod, quia, voluptas quae voluptates quas voluptatibus quibusdam quidem nesciunt.",
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      date: "Jun 13, 2017",
-      email: "jane@example.com",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quod, quia, voluptas quae voluptates quas voluptatibus quibusdam quidem nesciunt.",
-    },
-    {
-      id: 3,
-      name: "Misha Doe",
-      date: "Jun 13, 2017",
-      email: "misza@example.com",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quod, quia, voluptas quae voluptates quas voluptatibus quibusdam quidem nesciunt.",
-    },
-  ];
 
   return (
     <div className="comments-container">
@@ -62,7 +73,7 @@ const Comments = () => {
                       {comment.email}
                     </h3>
                   </div>
-                  <p className="comment__content-text">{comment.text}</p>
+                  <p className="comment__content-text">{comment.content}</p>
                 </div>
               </div>
             ))}

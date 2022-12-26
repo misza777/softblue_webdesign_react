@@ -1,5 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  FloatingLabel,
+} from "react-bootstrap";
 import { useState } from "react";
 import "./form.scss";
 
@@ -20,37 +27,44 @@ const MessageForm = () => {
           <Col xs={12} md={6}>
             <h3 className="form-title mb-4">Add comment</h3>
             <Form onSubmit={submitHandler}>
-            <Row className="mt-5">
-            <Col>
-              <Form.Group  controlId="name">
-                <Form.Control
-                  type="text"
-                  aria-label="your name"
-                  placeholder="Your Name"
-                  onChange={(e) => setName(e.target.value)}
-                ></Form.Control>
-              </Form.Group>
-            </Col>
-            <Col>
-              <Form.Group controlId="email">
-                <Form.Control
-                  type="email"
-                  aria-label="your email"
-                  placeholder="Your Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                ></Form.Control>
-              </Form.Group>
-            </Col>
-            </Row>
+              <Row className="mt-5">
+                <Col>
+                  <Form.Group controlId="name">
+                    <FloatingLabel label="Your Name">
+                      <Form.Control
+                        size="sm"
+                        type="text"
+                        aria-label="your name"
+                        placeholder="Your Name"
+                        onChange={(e) => setName(e.target.value)}
+                      ></Form.Control>
+                    </FloatingLabel>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group controlId="email">
+                    <FloatingLabel label="Your Email">
+                      <Form.Control
+                        type="email"
+                        aria-label="your email"
+                        placeholder="Your Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                      ></Form.Control>
+                    </FloatingLabel>
+                  </Form.Group>
+                </Col>
+              </Row>
 
               <Form.Group className="mt-4" controlId="comment">
-                <Form.Control
-                  as="textarea"
-                  rows="3"
-                  aria-label="your message"
-                  placeholder="Your Messages"
-                  onChange={(e) => setComment(e.target.value)}
-                ></Form.Control>
+                <FloatingLabel label="Your Messages">
+                  <Form.Control
+                    as="textarea"
+                    aria-label="your message"
+                    placeholder="Your Messages"
+                    style={{ height: "100px" }}
+                    onChange={(e) => setComment(e.target.value)}
+                  ></Form.Control>
+                </FloatingLabel>
               </Form.Group>
               <Button className="mt-4 btn-my-primary px-5" type="submit">
                 Send

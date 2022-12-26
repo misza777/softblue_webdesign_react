@@ -1,45 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Col, Row, Container } from "react-bootstrap";
-import { BsHeadset, BsHeart, BsLaptop } from "react-icons/bs";
 import "./experience.scss";
 import { FaBehanceSquare, FaBasketballBall } from "react-icons/fa";
+import axios from "axios";
 
 const Experience = () => {
-  const cardExpInfo = [
+  const [experiences, setExperiences] = useState([
     {
-      id: 1,
-      position: "Behancer",
-      time: "January 2015 - August 2018",
-      title: "Print & Web Designer",
-      text: "There are many varations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.",
-      icon: <FaBehanceSquare />,
+      id: "",
+      company: "",
+      description: "",
+      form: "",
+      to: "",
     },
-    {
-      id: 2,
-      position: "Dribble",
-      time: "January 2015 - August 2018",
-      title: "UI/UX Designer & Front-end Developer",
-      text: "There are many varations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.",
-      icon: <FaBasketballBall />,
-    },
-    {
-      id: 3,
-      position: "Themforest",
-      time: "January 2015 - August 2018",
-      title: "Web Designer & Developer",
-      text: "There are many varations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.",
-      icon: <FaBehanceSquare />,
-    },
-    {
-      id: 4,
-      position: "Behancer",
-      time: "January 2015 - August 2018",
-      title: "Web Designer & Developer",
-      text: "There are many varations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.",
-      icon: <FaBehanceSquare />,
-    },
-  ];
-  return (
+  ]);
+
+  const fetchURLexp =
+    "https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/experience";
+  const cancelToken = axios.CancelToken.source();
+
+  useEffect(() => {
+    const fetchExperiences = async () => {
+      await axios
+        .get(fetchURLexp, { cancelToken: cancelToken.token })
+        .then((res) => {
+          const response = res.data;
+          if (response.length > 0) {
+              const icons = [<FaBehanceSquare />, <FaBasketballBall />];
+              const responseWithIcons = response.map((exp) => {
+                  return { ...exp, icon: (exp.company) === "Behancer" ? <FaBehanceSquare /> : <FaBasketballBall /> };
+                });
+                setExperiences(responseWithIcons);
+          }
+        })
+        .catch((err) => {
+            if (axios.isCancel(err)) {
+                console.log("axios cancelled fetching data!");
+          }
+        });
+    };
+    
+    fetchExperiences();
+}, []);
+
+
+return (
     <>
       <div className="container-exp-bcg">
         <Container>
@@ -57,16 +62,16 @@ const Experience = () => {
             </p>
           </Col>
           <Row xs={1} md={2} className="g-4 px-xl-5">
-            {cardExpInfo.map((card) => (
-              <Col key={card.id}>
+            {experiences.map((exp) => (
+              <Col key={exp.id}>
                 <Card className="card-exp">
                   <Card.Header>
                     <div className="d-flex justify-content-start">
-                      <div className="card-exp_icon">{card.icon}</div>
+                      <div className="card-exp_icon">{exp?.icon}</div>
                       <div className="d-flex-column">
-                        <h3 className="card-exp_position">{card.position}</h3>
+                        <h3 className="card-exp_position">{exp.company}</h3>
                         <div className="exp-card-time text-muted ">
-                          {card.time}
+                          {exp.from} - {exp.to}
                         </div>
                       </div>
                     </div>
@@ -74,10 +79,10 @@ const Experience = () => {
 
                   <Card.Body className="card-body_text">
                     <Card.Title className="card-body_text">
-                      {card.title}
+                      {exp?.position}
                     </Card.Title>
                     <Card.Text className="card-body_text">
-                      {card.text}
+                      {exp.description}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -91,3 +96,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

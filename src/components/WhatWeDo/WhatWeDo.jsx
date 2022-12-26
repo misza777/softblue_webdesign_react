@@ -45,7 +45,6 @@ const WhatWeDo = () => {
             {cardsInfo.map((c, idx) => (
               <Col className="mt-xs-4" key={idx}>
                 <Card className="card">
-                  {/* <Card.Img variant="top" src={c.image} /> */}
                   <div className="icon-container">
                     <div className="icon">{c.icon}</div>
                   </div>
