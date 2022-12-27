@@ -6,6 +6,13 @@
     h2 {
         font-size: $fs-600; 
     }
+
+    .comments-nav {
+        cursor: pointer;
+        &:hover, &:focus {
+            color: $clr-main-secondary;
+        }
+    }
 }
 //pagination styles
 .pagination__item {
