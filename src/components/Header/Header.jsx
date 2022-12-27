@@ -5,13 +5,9 @@ import "./header.scss";
 
 const Header = () => {
   return (
-    <Navbar
-      expand="md"
-      variant="dark"
-      className="header-bcg px-sm-2 px-lg-5"
-    >
+    <Navbar expand="md" variant="dark" className="header-bcg px-sm-2 px-lg-5">
       <Container>
-        <LinkContainer to="/">
+        <LinkContainer to="/softblue_webdesign_react/">
           <Navbar.Brand className="navbar_brand pe-xs-2">
             <img
               alt="company logo"
@@ -26,24 +22,27 @@ const Header = () => {
 
         <Navbar.Collapse id="responsive-navbar-nav" className="clr-primary">
           <Nav className="ms-auto">
-            <LinkContainer to="/" active>
+            <LinkContainer to="softblue_webdesign_react/" active>
               <Nav.Link
                 active
                 className="mx-3 my-link"
                 aria-current="page"
-                to="/home"
+                to="softblue_webdesign_react/"
               >
                 Home
               </Nav.Link>
             </LinkContainer>
 
-            <LinkContainer to="/services">
+            <LinkContainer to="softblue_webdesign_react/services">
               <Nav.Link className="mx-3 my-link" to="/services">
                 Services
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/experience">
-              <Nav.Link className="mx-3 my-link" to="/experience">
+            <LinkContainer to="softblue_webdesign_react/experience">
+              <Nav.Link
+                className="mx-3 my-link"
+                to="softblue_webdesign_react/experience"
+              >
                 Experience
               </Nav.Link>
             </LinkContainer>

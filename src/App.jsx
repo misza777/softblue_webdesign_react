@@ -12,12 +12,18 @@ function App() {
   return (
     <>
       <Header />
-          <Routes>
-            <Route path="/" element={<HomeScreen />} />
-            <Route path="/experience" element={<ExperienceScreen />} />
-            <Route path="/services" element={<ServicesScreen />} />
-            {/* <Route path="/writeus" element={<ServicesScreen />} /> */}
-          </Routes>
+      <Routes>
+        <Route path="softblue_webdesign_react/" element={<HomeScreen />} />
+        <Route
+          path="softblue_webdesign_react/experience"
+          element={<ExperienceScreen />}
+        />
+        <Route
+          path="softblue_webdesign_react/services"
+          element={<ServicesScreen />}
+        />
+        {/* <Route path="/writeus" element={<ServicesScreen />} /> */}
+      </Routes>
       <Footer />
     </>
   );
