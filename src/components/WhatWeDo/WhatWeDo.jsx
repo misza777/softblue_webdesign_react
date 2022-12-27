@@ -60,7 +60,7 @@ const WhatWeDo = () => {
             of using Lorem Ipsum is that it has
           </p>
 
-          <Row xs={1} md={3} className="g-3 px-xl-4">
+          <Row xs={1} md={3} className="g-2 px-xl-4">
             {services.map((s) => (
               <Col className="mt-xs-4" key={s.id}>
                 <Card className="card">

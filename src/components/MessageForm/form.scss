@@ -1,43 +1,43 @@
-@use "../../scss/abstracts" as *;
+// @use "../../scss/abstracts" as *;
 
-.container-form-bcg {
-    background-color: $clr-bcg-primary-light;
+// .container-form-bcg {
+//     background-color: $clr-bcg-primary-light;
 
-    .form-title {
-        position: relative;
+//     .form-title {
+//         position: relative;
 
-        &::after {
-            content:"";
-            position: absolute;
-            width: 15%;
-            left: 0;
-            bottom: -.5rem;
-            border-bottom: 1px solid $clr-main-primary;
-        }
-        &::before {
-            content:"";
-            position: absolute;
-            width: 7%;
-            left: 0;
-            bottom: -.7rem;
-            border-bottom: 1px solid $clr-main-primary;
-        }
+//         &::after {
+//             content:"";
+//             position: absolute;
+//             width: 15%;
+//             left: 0;
+//             bottom: -.5rem;
+//             border-bottom: 1px solid $clr-main-primary;
+//         }
+//         &::before {
+//             content:"";
+//             position: absolute;
+//             width: 7%;
+//             left: 0;
+//             bottom: -.7rem;
+//             border-bottom: 1px solid $clr-main-primary;
+//         }
         
-    }
-}
+//     }
+// }
 
-input.form-control,
-textarea.form-control {
-    font-size: $fs-300;
-    background-color: $clr-bcg-primary-light;
-    color: $clr-main-primary !important;
-    border-radius: 0;
-    &:focus,
-    &:active {
-        border: none;
-        outline: 1px solid $clr-main-primary;
-        background-color: inherit;
-        color: inherit;
-        box-shadow: none;
-    }
-}
+// input.form-control,
+// textarea.form-control {
+//     font-size: $fs-300;
+//     background-color: $clr-bcg-primary-light;
+//     color: $clr-main-primary !important;
+//     border-radius: 0;
+//     &:focus,
+//     &:active {
+//         border: none;
+//         outline: 1px solid $clr-main-primary;
+//         background-color: inherit;
+//         color: inherit;
+//         box-shadow: none;
+//     }
+// }

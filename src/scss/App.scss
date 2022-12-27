@@ -12,9 +12,9 @@ body {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
     position: absolute;
-    bottom: -2%;
-    left: -.5%;
-    z-index: -3;
+    bottom: -5%;
+    left: 0;
+    z-index: 0;
     transform: scale(.8)
   }
   
@@ -24,7 +24,7 @@ body {
     position: absolute;
     top: -3%;
     right: -1%;
-    z-index: -3;
+    z-index: 0;
     transform: scale(.8)
 }
 }

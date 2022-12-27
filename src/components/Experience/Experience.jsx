@@ -70,7 +70,7 @@ const Experience = () => {
               point of using Lorem Ipsum is that it has
             </p>
           </Col>
-          <Row xs={1} md={2} className="g-4 px-xl-5">
+          <Row xs={1} md={2} className="g-2 px-md-4 px-xl-5 px-xxl-5">
             {experiences.map((exp) => (
               <Col key={exp.id}>
                 <Card className="card-exp">

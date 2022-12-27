@@ -1,0 +1,85 @@
+@use "../../scss/abstracts" as *;
+
+.bcg-home {
+    background-color: $clr-bcg-primary-light;
+}
+
+.home-container {
+    height: 85vh;
+
+    position: relative;
+    background-image: 
+    url('/images/Shape_waves_2.svg'),
+    url('/images/Polygon_1.svg'),
+    url('/images/Polygon_2.svg');
+    background-size: 8%, 6%, 4%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 64% 32%, 35% 10%, 35% 65%;
+    
+    & .hero-img {
+        transform: 
+        // scale(.9) 
+        translateX(0%) translateY(0%);
+    }
+
+    &::before {
+        content: url('/images/Polygon_3.svg');
+        color: $clr-main-secondary;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        z-index: 0;
+    }
+    
+    &::after {
+        content: url('/images/Polygon_4.png');
+        color: $clr-main-secondary;
+        position: absolute;
+        right:-3%;
+        top: 30%;
+        z-index: 0;
+    }
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+    
+    h1 {
+        font-size: 2.2rem;
+        font-weight: $fw-bold;
+        color: $clr-main-primary;
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
+    }
+        p {
+            font-size: 1.2rem;
+            font-weight: $fw-regular;
+            color: $clr-main-primary;
+        }
+
+        ol {
+            margin-bottom: 2em;
+            padding-left: 1.2em;
+            li {
+                font-size: 1.2rem;
+                font-weight: $fw-regular;
+                color: $clr-main-primary;
+                margin-bottom: .2em;
+                &::marker {
+                    padding-left: 0;
+                }
+            }
+    }
+}
+
+.wave-decoration {
+    position: absolute;
+    transform: scale(.5);
+    top: -20%;
+    left:-9%;
+}
+}

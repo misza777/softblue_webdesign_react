@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import "./scss/custom.scss";
 import "./scss/App.scss";
@@ -13,15 +12,18 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="softblue_webdesign_react/" element={<HomeScreen />} />
-        <Route
+        {/* <Route path="softblue_webdesign_react/" element={<HomeScreen />} /> */}
+        <Route path="/" element={<HomeScreen />} />
+        {/* <Route
           path="softblue_webdesign_react/experience"
           element={<ExperienceScreen />}
-        />
-        <Route
+        /> */}
+        <Route path="/experience" element={<ExperienceScreen />} />
+        {/* <Route
           path="softblue_webdesign_react/services"
           element={<ServicesScreen />}
-        />
+        /> */}
+        <Route path="/services" element={<ServicesScreen />} />
         {/* <Route path="/writeus" element={<ServicesScreen />} /> */}
       </Routes>
       <Footer />
