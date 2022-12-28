@@ -45,12 +45,17 @@ const WhatWeDo = () => {
   }, []);
 
   return (
-    <div className="container-what-bcg">
-      <Container>
+    <div className="container-what-bcg ">
+      <Container className="">
         <Col
           className="
-    px-md-5 
-    text-center"
+
+          py-sm-3
+          py-md-4
+          py-xl-5
+          pb-xl-3
+          px-md-5 
+          text-center"
         >
           <h3 className="text-uppercase clr-secondary">What we do</h3>
           <h2>Better Services For You</h2>
@@ -68,7 +73,9 @@ const WhatWeDo = () => {
                     <div className="icon">{s.icon}</div>
                   </div>
                   <Card.Body>
-                    <Card.Title className="card-title text-uppercase">{s.name}</Card.Title>
+                    <Card.Title className="card-title text-uppercase">
+                      {s.name}
+                    </Card.Title>
                     <Card.Text className="card-text">{s.description}</Card.Text>
                   </Card.Body>
                 </Card>

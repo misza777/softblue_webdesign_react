@@ -30,8 +30,8 @@ const Hero = () => {
                   <li>Front-end Design</li>
                 </ol>
                 <div className="d-flex hero-text-btns">
-                  <button className="btn btn-my-primary px-4">Read More</button>
-                  <button className="btn btn-my-secondary mx-3 px-4">
+                  <button className="btn btn-my-primary px-3">Read More</button>
+                  <button className="btn btn-my-secondary mx-3 px-3">
                     Contact Us
                   </button>
                 </div>

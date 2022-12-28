@@ -6,7 +6,6 @@
 
 .home-container {
     height: 85vh;
-
     position: relative;
     background-image: 
     url('/images/Shape_waves_2.svg'),
@@ -18,8 +17,8 @@
     
     & .hero-img {
         transform: 
-        // scale(.9) 
         translateX(0%) translateY(0%);
+        z-index: 1;
     }
 
     &::before {
@@ -52,7 +51,7 @@
         font-weight: $fw-bold;
         color: $clr-main-primary;
         &:last-of-type {
-            margin-bottom: 1rem;
+            margin-bottom: 1em;
         }
     }
         p {

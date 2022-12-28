@@ -11,6 +11,7 @@ import {
 // import Paginate from "../components/Paginate";
 import "./comments.scss";
 import axios from "axios";
+import moment from "moment";
 
 const Comments = () => {
   const [page, setPage] = useState(1);
@@ -124,9 +125,14 @@ const Comments = () => {
     <>
       <div className="comments-container">
         <Container>
-          <Col md={6} className="mx-auto py-4">
+          <Col
+            md={5}
+            className="mx-auto py-sm-3
+          py-md-4
+          py-xl-4"
+          >
             <div className="d-flex justify-content-between">
-              <h2 className="text-center mb-5">Comments</h2>
+              <h2 className="text-center mb-4">Comments</h2>
               <p>
                 <span className="comments-nav" onClick={handleNavClick}>
                   oldest
@@ -141,10 +147,10 @@ const Comments = () => {
               {comments.map((comment) => (
                 <div key={crypto.randomUUID()} className="comment pb-3">
                   <div className="comment__content">
-                    <div className="comment__content-dat pb-2">
-                      {comment.date}
+                    <div className="comment__content-date pb-1">
+                      {moment(comment.createdAt).format("MMM DD, YYYY")}
                     </div>
-                    <div className="comment__content_title d-flex justify-content-start g-2 pb-2">
+                    <div className="comment__content_title d-flex justify-content-start g-2 pb-1">
                       <h3 className="comment__content-name ">{comment.name}</h3>
                       <h3 className="comment__content-email px-3">
                         {comment.email}
@@ -155,17 +161,17 @@ const Comments = () => {
                 </div>
               ))}
             </div>
-            <Pagination className="mt-5">{items}</Pagination>
+            <Pagination className="mt-3">{items}</Pagination>
           </Col>
         </Container>
       </div>
-      <div className="container-form-bcg">
+      <div className="container-form-bcg pb-2">
         <Container>
-          <Row className="justify-content-md-center py-5">
-            <Col xs={12} md={6}>
-              <h3 className="form-title mb-4">Add comment</h3>
+          <Row className="justify-content-md-center py-4">
+            <Col xs={12} md={5}>
+              <h3 className="form-title">Add comment</h3>
               <Form onSubmit={submitHandler}>
-                <Row className="mt-5">
+                <Row className="mt-4">
                   <Col>
                     <Form.Group controlId="Your name">
                       <FloatingLabel label="Your Name">
@@ -193,7 +199,7 @@ const Comments = () => {
                   </Col>
                 </Row>
 
-                <Form.Group className="mt-4" controlId="Your Messages">
+                <Form.Group className="mt-3" controlId="Your Messages">
                   <FloatingLabel label="Your Messages">
                     <Form.Control
                       as="textarea"
@@ -204,7 +210,7 @@ const Comments = () => {
                     ></Form.Control>
                   </FloatingLabel>
                 </Form.Group>
-                <Button className="mt-4 btn-my-primary px-5" type="submit">
+                <Button className="mt-3 btn-my-primary px-4" type="submit">
                   Send
                 </Button>
               </Form>

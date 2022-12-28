@@ -59,6 +59,10 @@ const Experience = () => {
         <Container>
           <Col
             className=" 
+            py-sm-3
+          py-md-4
+          py-xl-5
+          pb-xl-3
     px-md-5 
     text-center"
           >
@@ -70,7 +74,7 @@ const Experience = () => {
               point of using Lorem Ipsum is that it has
             </p>
           </Col>
-          <Row xs={1} md={2} className="g-2 px-md-4 px-xl-5 px-xxl-5">
+          <Row xs={1} md={2} className="g-2 px-md-4 px-xl-5 px-xxl-5 pb-lg-4">
             {experiences.map((exp) => (
               <Col key={exp.id}>
                 <Card className="card-exp">
@@ -88,7 +92,7 @@ const Experience = () => {
 
                   <Card.Body className="card-body_text">
                     <Card.Title className="card-body_text">
-                      {exp?.position}
+                      {exp.position}
                     </Card.Title>
                     <Card.Text className="card-body_text">
                       {exp.description}

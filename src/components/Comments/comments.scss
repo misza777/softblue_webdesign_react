@@ -14,6 +14,13 @@
         }
     }
 }
+
+
+.comment__content-date {
+    font-size: $fs-300;
+    font-weight: $fw-regular;
+}
+
 //pagination styles
 .pagination__item {
     display: inline-block;
