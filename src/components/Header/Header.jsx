@@ -35,7 +35,7 @@ const Header = ({ formRef }) => {
             <LinkContainer to="/" active>
               <Nav.Link
                 active
-                className="mx-3 my-link"
+                className="mx-md-1 mx-lg-2 my-link"
                 aria-current="page"
                 to="/"
               >
@@ -44,17 +44,17 @@ const Header = ({ formRef }) => {
             </LinkContainer>
 
             <LinkContainer to="softblue_webdesign_react/services">
-              <Nav.Link className="mx-3 my-link" to="/services">
+              <Nav.Link className="mx-md-1 mx-lg-2 my-link" to="/services">
                 Services
               </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/experience">
-              <Nav.Link className="mx-3 my-link" to="/experience">
+              <Nav.Link className="mx-md-1 mx-lg-2 my-link" to="/experience">
                 Experience
               </Nav.Link>
             </LinkContainer>
 
-            <Button className="btn-my-primary px-4 ml-3" onClick={handleScroll}>Contact Us</Button>
+            <Button className="btn-my-primary px-3" onClick={handleScroll}>Contact Us</Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

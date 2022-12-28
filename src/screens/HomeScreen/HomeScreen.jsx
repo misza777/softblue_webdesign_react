@@ -1,4 +1,4 @@
-import React, { useRef, forwardRef } from "react";
+import React, {  forwardRef } from "react";
 import Comments from "../../components/Comments/Comments";
 import "./home.scss";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
@@ -9,7 +9,7 @@ const HomeScreen = forwardRef((props, formRef) => {
 
   return (
     <>
-      <Hero />
+      <Hero formRef={formRef} />
       <WhatWeDo />
       <Experience />
       <Comments ref={formRef} />

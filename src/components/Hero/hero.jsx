@@ -2,7 +2,13 @@ import React from "react";
 import "./hero.scss";
 import { Container, Row, Col } from "react-bootstrap";
 
-const Hero = () => {
+const Hero = ({ formRef }) => {
+  console.log(formRef);
+
+  const handleScroll = () => {
+    formRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <div className="bcg-home">
@@ -31,7 +37,10 @@ const Hero = () => {
                 </ol>
                 <div className="d-flex hero-text-btns">
                   <button className="btn btn-my-primary px-3">Read More</button>
-                  <button className="btn btn-my-secondary mx-3 px-3">
+                  <button
+                    className="btn btn-my-secondary mx-3 px-3"
+                    onClick={handleScroll}
+                  >
                     Contact Us
                   </button>
                 </div>
