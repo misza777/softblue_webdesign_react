@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useRef, forwardRef } from "react";
 import Comments from "../../components/Comments/Comments";
 import "./home.scss";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import Experience from "../../components/Experience/Experience";
-import Hero from '../../components/Hero/Hero'
+import Hero from "../../components/Hero/Hero";
 
-const HomeScreen = () => {
+const HomeScreen = forwardRef((props, formRef) => {
+
   return (
     <>
       <Hero />
       <WhatWeDo />
       <Experience />
-      <Comments />
+      <Comments ref={formRef} />
     </>
   );
-};
+});
 
 export default HomeScreen;

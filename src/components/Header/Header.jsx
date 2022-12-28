@@ -3,15 +3,20 @@ import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "./header.scss";
 
-const Header = () => {
+const Header = ({ formRef }) => {
+
+  const handleScroll = () => {
+    formRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-      <Container>
-    <Navbar
-      expand="md"
-      variant="dark"
-      className="header-bcg px-sm-3 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
-    >
-      {/* /softblue_webdesign_react */}
+    <Container>
+      <Navbar
+        expand="md"
+        variant="dark"
+        className="header-bcg px-sm-3 px-md-4 px-lg-4 px-xl-5 px-xxl-5"
+      >
+        {/* /softblue_webdesign_react */}
         <LinkContainer to="/">
           <Navbar.Brand className="navbar_brand pe-xs-2">
             <img
@@ -49,11 +54,11 @@ const Header = () => {
               </Nav.Link>
             </LinkContainer>
 
-            <Button className="btn-my-primary px-4 ml-3">Contact Us</Button>
+            <Button className="btn-my-primary px-4 ml-3" onClick={handleScroll}>Contact Us</Button>
           </Nav>
         </Navbar.Collapse>
-    </Navbar>
-      </Container>
+      </Navbar>
+    </Container>
   );
 };
 

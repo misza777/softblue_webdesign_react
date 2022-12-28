@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { forwardRef, useState, useEffect, useRef } from "react";
 import {
   Col,
   Row,
@@ -13,7 +13,10 @@ import "./comments.scss";
 import axios from "axios";
 import moment from "moment";
 
-const Comments = () => {
+const Comments = forwardRef((props, formRef) => {
+  console.log(formRef);
+
+
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [commentSent, setCommentSent] = useState(false);
@@ -170,7 +173,7 @@ const Comments = () => {
           <Row className="justify-content-md-center py-4">
             <Col xs={12} md={5}>
               <h3 className="form-title">Add comment</h3>
-              <Form onSubmit={submitHandler}>
+              <Form onSubmit={submitHandler} ref={formRef}>
                 <Row className="mt-4">
                   <Col>
                     <Form.Group controlId="Your name">
@@ -220,6 +223,6 @@ const Comments = () => {
       </div>
     </>
   );
-};
+});
 
 export default Comments;

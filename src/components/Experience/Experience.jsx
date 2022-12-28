@@ -92,7 +92,7 @@ const Experience = () => {
 
                   <Card.Body className="card-body_text">
                     <Card.Title className="card-body_text">
-                      {exp.position}
+                      Web Designer & Developer
                     </Card.Title>
                     <Card.Text className="card-body_text">
                       {exp.description}
