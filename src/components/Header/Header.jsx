@@ -4,7 +4,6 @@ import { LinkContainer } from "react-router-bootstrap";
 import "./header.scss";
 
 const Header = ({ formRef }) => {
-
   const handleScroll = () => {
     formRef.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -43,7 +42,7 @@ const Header = ({ formRef }) => {
               </Nav.Link>
             </LinkContainer>
 
-            <LinkContainer to="softblue_webdesign_react/services">
+            <LinkContainer to="/services">
               <Nav.Link className="mx-md-1 mx-lg-2 my-link" to="/services">
                 Services
               </Nav.Link>
@@ -54,7 +53,9 @@ const Header = ({ formRef }) => {
               </Nav.Link>
             </LinkContainer>
 
-            <Button className="btn-my-primary px-3" onClick={handleScroll}>Contact Us</Button>
+            <Button className="btn-my-primary px-3" onClick={handleScroll}>
+              Contact Us
+            </Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

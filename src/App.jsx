@@ -7,28 +7,30 @@ import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import ServicesScreen from "./screens/ServicesScreen/ServicesScreen";
 import ExperienceScreen from "./screens/ExperienceScreen/ExperienceScreen";
 // ref to the form
-import {useRef} from 'react';
-
+import { useRef } from "react";
 
 function App() {
   const formRef = useRef(null);
-  
+
   return (
     <>
-      <Header formRef={formRef}/>
+      <Header formRef={formRef} />
       <Routes>
+        <Route path="/" element={<HomeScreen ref={formRef} />} />
+        <Route path="/services" element={<ServicesScreen ref={formRef} />} />
+        <Route
+          path="/experience"
+          element={<ExperienceScreen ref={formRef} />}
+        />
         {/* <Route path="softblue_webdesign_react/" element={<HomeScreen />} /> */}
-        <Route path="/" element={<HomeScreen ref={formRef}/>} />
         {/* <Route
           path="softblue_webdesign_react/experience"
           element={<ExperienceScreen />}
         /> */}
-        <Route path="/experience" element={<ExperienceScreen />} />
         {/* <Route
           path="softblue_webdesign_react/services"
           element={<ServicesScreen />}
         /> */}
-        <Route path="/services" element={<ServicesScreen />} />
         {/* <Route path="/writeus" element={<ServicesScreen />} /> */}
       </Routes>
       <Footer />

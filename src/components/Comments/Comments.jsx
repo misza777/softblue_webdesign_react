@@ -14,7 +14,6 @@ import axios from "axios";
 import moment from "moment";
 
 const Comments = forwardRef((props, formRef) => {
-  console.log(formRef);
 
 
   const [page, setPage] = useState(1);
