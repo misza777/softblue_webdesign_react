@@ -48,7 +48,7 @@
     border: none;
 }
 
-.page-link[aria-label='Page 18'] {
+.page-item:nth-last-of-type(2) .page-link {
     color: $clr-main-primary;
     background-color: $clr-bcg-primary-light;
     border: none;
