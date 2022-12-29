@@ -1,14 +1,17 @@
-@use "../../../scss/abstracts" as *;
+@use "../../../scss/abstracts"as *;
 
 .comments-container {
     background-color: $clr-bcg-primary-dark;
+
     h2 {
-        font-size: $fs-600; 
+        font-size: $fs-600;
     }
 
     .comments-nav {
         cursor: pointer;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
             color: $clr-main-secondary;
         }
     }
@@ -45,10 +48,10 @@
     border: none;
 }
 
-.page-link[aria-label="Page 17"] {
+li.page-item:last-of-type  {
     color: $clr-main-primary;
     background-color: $clr-bcg-primary-light;
     border: none;
-    margin-right: 0;
+    margin-right: 10em;
     padding-left: 0;
 }

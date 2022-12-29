@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Pagination, Container } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 import moment from "moment";
-import "./commnetItems.scss";
+import "./commentItems.scss";
 
 const CommentItems = ({ data }) => {
   const [currentItems, setCurrentItems] = useState([]);
@@ -21,7 +21,7 @@ const CommentItems = ({ data }) => {
     if (e.target.innerText === "oldest") {
       setItemOffset(data.length - 5);
     } else if (e.target.innerText === "newest") {
-        setItemOffset(0);
+      setItemOffset(0);
     }
   };
 
