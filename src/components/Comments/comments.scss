@@ -1,49 +1,5 @@
 @use "../../scss/abstracts" as *;
 
-
-.comments-container {
-    background-color: $clr-bcg-primary-dark;
-    h2 {
-        font-size: $fs-600; 
-    }
-
-    .comments-nav {
-        cursor: pointer;
-        &:hover, &:focus {
-            color: $clr-main-secondary;
-        }
-    }
-}
-
-
-.comment__content-date {
-    font-size: $fs-300;
-    font-weight: $fw-regular;
-}
-
-//pagination styles
-
-.page-item.active .page-link {
-    color: $clr-main-primary;
-    background-color: $clr-main-secondary;
-    border: none;
-}
-.last-items {
-    background-color: $clr-bcg-primary-light;
-    margin-right: .3em;
-    color: $clr-main-primary;
-    border: none;
-    text-decoration: none;
-    
-}
-.page-item .page-link {
-    margin-right: .3em;
-    color: $clr-main-primary;
-    background-color: $clr-bcg-secondary;
-    color: $clr-main-primary;
-    border: none;
-}
-
 .container-form-bcg {
     background-color: $clr-bcg-primary-light;
 

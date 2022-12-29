@@ -1,18 +1,16 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Hero from "../../components/Hero/Hero";
 import Comments from "../../components/Comments/Comments";
 import ServicesDesc from "../../components/ServicesDesc/ServicesDesc";
 
-const ServicesScreen = () => {
+const ServicesScreen = forwardRef((props, formRef) => {
   return (
     <>
-      <Hero />
+      <Hero formRef={formRef} />
       <ServicesDesc />
-      <Comments
-      //  ref={formRef}
-      />
+      <Comments ref={formRef} />
     </>
   );
-};
+});
 
 export default ServicesScreen;

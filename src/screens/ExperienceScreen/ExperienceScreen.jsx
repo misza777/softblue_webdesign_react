@@ -1,20 +1,16 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Hero from "../../components/Hero/Hero";
 import ExperienceDesc from "../../components/ExperienceDesc/ExperienceDesc";
 import Comments from "../../components/Comments/Comments";
 
-const Experience = () => {
-  
+const Experience = forwardRef((props, formRef) => {
   return (
     <>
-      <Hero />
+      <Hero formRef={formRef} />
       <ExperienceDesc />
-      <Comments 
-      // ref={formRef} 
-
-      />
+      <Comments ref={formRef} />
     </>
-  )
-};
+  );
+});
 
 export default Experience;
