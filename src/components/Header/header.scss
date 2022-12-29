@@ -21,7 +21,7 @@ button.navbar-toggler {
        color: $clr-main-primary !important;
    } 
    &:focus {
-         color: $clr-main-secondary !important;
+         color: $clr-main-secondary;
          border-color:  $clr-main-secondary;
    }
 }

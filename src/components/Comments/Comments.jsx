@@ -7,6 +7,8 @@ import {
   Button,
   Pagination,
   Container,
+  Toast,
+  ToastContainer,
 } from "react-bootstrap";
 import CommentItems from "./CommentItems/CommentItems";
 import "./comments.scss";
@@ -17,6 +19,8 @@ const Comments = forwardRef((props, formRef) => {
   const [allComments, setAllComments] = useState([]);
   //form state
   const [commentSent, setCommentSent] = useState(false);
+  //toast state
+  const [show, setShow] = useState(false);
 
   //form refs
   const nameRef = useRef(null);
@@ -44,13 +48,7 @@ const Comments = forwardRef((props, formRef) => {
     };
     //fetchig data
     fetchComments();
-
-    
   }, [commentSent]);
-
-  
-
-  
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -64,8 +62,8 @@ const Comments = forwardRef((props, formRef) => {
     try {
       const response = await axios.post(URLcomments, newComment);
       if (response.status === 201) {
-        alert("Comment added!");
         setCommentSent(true);
+        setShow(true);
       }
     } catch (error) {
       console.log(error);
@@ -77,10 +75,33 @@ const Comments = forwardRef((props, formRef) => {
 
   return (
     <>
-    <CommentItems data={allComments} />
-      <div className="container-form-bcg pb-2">
+      <CommentItems data={allComments} />
+      <div className="container-form-bcg pb-2 position-relative">
         <Container>
-          <Row className="justify-content-md-center py-4">
+          <Col xs={6}>
+            <ToastContainer className="p-" position="top-center">
+              <Toast
+                onClose={() => setShow(false)}
+                show={show}
+                delay={3000}
+                autohide
+              >
+                <Toast.Header>
+                  <img
+                    src="/images/react.svg"
+                    className="rounded me-auto"
+                    alt="react app"
+                  />
+                </Toast.Header>
+                <Toast.Body className="text-center bcg-secondary">
+                  Thank You for your comment!
+                  <br />
+                  Your comment is now visible.
+                </Toast.Body>
+              </Toast>
+            </ToastContainer>
+          </Col>
+          <Row className="justify-content-md-center py-2 ">
             <Col xs={12} md={5}>
               <h3 className="form-title">Add comment</h3>
               <Form onSubmit={submitHandler} ref={formRef}>

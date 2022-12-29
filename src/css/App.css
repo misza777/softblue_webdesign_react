@@ -55,6 +55,10 @@ body::after {
   color: #00BBD5;
 }
 
+.bcg-secondary {
+  background-color: #00BBD5;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

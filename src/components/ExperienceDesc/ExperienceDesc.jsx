@@ -18,7 +18,7 @@ const ExperienceDesc = () => {
             <h3 className="text-uppercase clr-secondary">Experience</h3>
             <h2>Lorem Ipsum</h2>
           </Col>
-          <Row className="g-4 px-md-4 px-xl-5 px-xxl-5 pb-lg-4 pb-xl-4">
+          <Row className="g-4 px-md-4 px-xl-5 px-xxl-5 pb-lg-4 pb-xl-4 pb-sm-3 ">
             <Col sm={12} md={6}>
               <p className="pb-1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
