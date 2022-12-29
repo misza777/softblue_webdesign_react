@@ -1,14 +1,17 @@
+@use "../../scss/abstracts"as *;
+
 .container-home {
-    display: flex;
+    background-color: $clr-bcg-primary-light;
+    // heigt: 50vh;
 }
 
 .notFound-body {
-    padding: 3.4rem 0;
-    flex: 9;
     width: 100%;
     object-fit: cover;
-    margin-block: 20px;
-    background-color: whitesmoke;
+
+    & img {
+        transform: scale(.8);
+    }
 }
 
 .errorPage-reason {
@@ -17,9 +20,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 10px 10px;
-    font-size: 1.2rem;
-    font-family: "Lora", sans-serif;
+    // margin: 10px 10px;
+    font-size: 1rem;
 }
 
 .errorPage-reason h1 {

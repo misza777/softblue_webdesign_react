@@ -1,5 +1,5 @@
-@use './abstracts' as *;
-
+@use './abstracts'as *;
+@use 'sass:map';
 
 body {
   font-family: $ff-body;
@@ -8,7 +8,7 @@ body {
   min-width: 270px;
   overflow-x: hidden;
 
- &::before {
+  &::before {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
     position: absolute;
@@ -17,7 +17,7 @@ body {
     z-index: 0;
     transform: scale(.8)
   }
-  
+
   &::after {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
@@ -26,7 +26,7 @@ body {
     right: -1%;
     z-index: 0;
     transform: scale(.8)
-}
+  }
 }
 
 .btn-my-primary {
@@ -34,11 +34,14 @@ body {
   outline: none;
   background-color: $clr-main-secondary;
   border-radius: 0;
+
   &:hover {
     background-color: $clr-main-primary;
     color: $clr-main-secondary;
-  } 
-};
+  }
+}
+
+;
 
 .btn-my-secondary {
   border: 1px solid $clr-main-primary;
@@ -46,11 +49,14 @@ body {
   background-color: transparent;
   border-radius: 0;
   color: $clr-main-primary;
+
   &:hover {
     background-color: $clr-main-primary;
     color: $clr-main-secondary;
-  } 
-};
+  }
+}
+
+;
 
 .clr-primary {
   color: $clr-main-primary;
@@ -89,4 +95,21 @@ p {
   margin: 0 auto;
 }
 
+$breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
 
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+
+// @include mq();
