@@ -8,61 +8,39 @@ import {
   Pagination,
   Container,
 } from "react-bootstrap";
-// import Paginate from "../components/Paginate";
+import ReactPaginate from "react-paginate";
 import "./comments.scss";
 import axios from "axios";
 import moment from "moment";
 
 const Comments = forwardRef((props, formRef) => {
-
-
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(10);
-  const [commentSent, setCommentSent] = useState(false);
+  // comments state
   const [allComments, setAllComments] = useState([]);
-  const [comments, setComments] = useState([
-    {
-      name: "",
-      email: "",
-      content: "",
-      createdAt: "",
-      id: "",
-    },
-  ]);
+  const [currentItems, setCurrentItems] = useState([]);
+  const [itemOffset, setItemOffset] = useState(0);
+  const [pageCount, setPageCount] = useState(0);
+  const itemsPerPage = 4;
+
+  //form state
+  const [commentSent, setCommentSent] = useState(false);
 
   //form refs
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const contentRef = useRef(null);
 
-  //fetching data from mockapi
-  const URLpage = `https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/comments?page=${page}&limit=${limit}`;
-
   const URLcomments = `https://62cbcfcd8042b16aa7c2d987.mockapi.io/blog/api/comments`;
 
   // good practice to cancel axios request
-  const cancelToken1 = axios.CancelToken.source();
-  const cancelToken2 = axios.CancelToken.source();
+  const cancelToken = axios.CancelToken.source();
 
   useEffect(() => {
     const fetchComments = async () => {
-      //zapytanie o pierwsza strone
       await axios
-        .get(URLpage, { cancelToken: cancelToken1.token })
+        .get(URLcomments, { cancelToken: cancelToken.token })
         .then((res) => {
-          setComments(res.data);
-        })
-        .catch((err) => {
-          if (axios.isCancel(err)) {
-            console.log("axios cancelled fetching data!");
-          }
-        });
-
-      //zapytanie o wszystkie komentarze po to by policzyc ile jest stron
-      await axios
-        .get(URLcomments, { cancelToken: cancelToken2.token })
-        .then((res) => {
-          setAllComments(res.data);
+          const sortedComments = res.data.reverse();
+          setAllComments(sortedComments);
         })
         .catch((err) => {
           if (axios.isCancel(err)) {
@@ -70,26 +48,19 @@ const Comments = forwardRef((props, formRef) => {
           }
         });
     };
-
+    //fetchig data
     fetchComments();
-  }, [page, commentSent]);
+
+    //pagination
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setCurrentItems(allComments.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(allComments.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, commentSent]);
 
   //pagination
-  let active = page;
-  let items = [];
-  let totalPages = Math.ceil(allComments.length / 10);
-  for (let i = 1; i <= totalPages; i++) {
-    items.push(
-      <Pagination.Item
-        className="pagination__item"
-        key={i}
-        active={i === active}
-        onClick={() => setPage(i)}
-      >
-        {i}
-      </Pagination.Item>
-    );
-  }
+  //     <Pagination.Item
+  //       className="pagination__item"
 
   const handleNavClick = (e) => {
     if (e.target.innerText === "oldest") {
@@ -97,6 +68,14 @@ const Comments = forwardRef((props, formRef) => {
     } else if (e.target.innerText === "newest") {
       page < totalPages ? setPage((prevpage) => prevpage + 1) : null;
     }
+  };
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % allComments.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
   };
 
   const submitHandler = async (e) => {
@@ -110,7 +89,6 @@ const Comments = forwardRef((props, formRef) => {
 
     try {
       const response = await axios.post(URLcomments, newComment);
-      console.log(response);
       if (response.status === 201) {
         alert("Comment added!");
         setCommentSent(true);
@@ -146,7 +124,7 @@ const Comments = forwardRef((props, formRef) => {
               </p>
             </div>
             <div className="comments">
-              {comments.map((comment) => (
+              {currentItems?.map((comment) => (
                 <div key={crypto.randomUUID()} className="comment pb-3">
                   <div className="comment__content">
                     <div className="comment__content-date pb-1">
@@ -163,7 +141,27 @@ const Comments = forwardRef((props, formRef) => {
                 </div>
               ))}
             </div>
-            <Pagination className="mt-3">{items}</Pagination>
+            {/* <Pagination className="mt-3">{items}</Pagination> */}
+            <ReactPaginate
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              breakLabel="..."
+              breakClassName="page-item"
+              breakLinkClassName="last-items"
+              previousLabel="<<<"
+              previousClassName="d-none"
+              previousLinkClassName="page-link"
+              nextLabel=">>>"
+              nextClassName="d-none"
+              nextLinkClassName="page-link"
+              onPageChange={handlePageClick}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={3}
+              pageCount={pageCount}
+              renderOnZeroPageCount={null}
+              containerClassName="pagination"
+              activeClassName="active"
+            />
           </Col>
         </Container>
       </div>

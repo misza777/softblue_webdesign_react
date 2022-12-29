@@ -3,7 +3,6 @@ import "./hero.scss";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Hero = ({ formRef }) => {
-  console.log(formRef);
 
   const handleScroll = () => {
     formRef.current.scrollIntoView({ behavior: "smooth" });
