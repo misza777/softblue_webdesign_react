@@ -1,32 +1,33 @@
 // redefined values here ...
 
+
 $spacer: 2rem !default;
 
-@import "../../node_modules/bootstrap/scss/_functions.scss"; 
+@import "../../node_modules/bootstrap/scss/_functions.scss";
 // Required
-@import "../../node_modules/bootstrap/scss/_variables.scss"; 
+@import "../../node_modules/bootstrap/scss/_variables.scss";
 // Required
 
 // Create your own map
-$custom-colors: (
-    "clr-bcg-primary": #06101A,
+$custom-colors: ("clr-bcg-primary": #06101A,
     "clr-bcg-secondary": #063345,
     "clr-main-primary": #F9F9F8,
     "clr-main-secondary": #00BBD5,
-    );
-    
+);
+
 $theme-colors: map-merge ($custom-colors, $theme-colors) !default;
-    
-    $body-bg:#06101A;
-    $body-color: #F9F9F8;
-    
-    // @import "bootstrap/scss/mixins"; // Required
-    
-    // @import "../../node_modules/bootstrap/scss/_root.scss"; 
-    // Required
-    // @import "../../node_modules/bootstrap/scss/_grid.scss";
-    // @import "bootstrap/scss/reboot"; // Required
-    // @import "bootstrap/scss/type";
+
+
+$body-bg:#06101A;
+$body-color: #F9F9F8;
+
+// @import "bootstrap/scss/mixins"; // Required
+
+// @import "../../node_modules/bootstrap/scss/_root.scss"; 
+// Required
+// @import "../../node_modules/bootstrap/scss/_grid.scss";
+// @import "bootstrap/scss/reboot"; // Required
+// @import "bootstrap/scss/type";
 // @import "bootstrap/scss/images";
 // @import "bootstrap/scss/code";
 // @import "bootstrap/scss/tables";
@@ -57,6 +58,4 @@ $theme-colors: map-merge ($custom-colors, $theme-colors) !default;
 //  @import "bootstrap/scss/spinners";
 // @import "bootstrap/scss/utilities";
 //  @import "bootstrap/scss/print";
- @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
- 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -3,14 +3,13 @@ import "./hero.scss";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Hero = ({ formRef }) => {
-
   const handleScroll = () => {
     formRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
-      <div className="bcg-home">
+      <div className="bcg-home ">
         <Container>
           <div
             className="
@@ -21,8 +20,16 @@ const Hero = ({ formRef }) => {
           px-xxl-5 
           home-container"
           >
-            <Row>
-              <Col sm={12} md={7} lg={7} xl={7} xxl={7} className="hero-text">
+            <Row className="py-md-3">
+              <Col
+                xs={8}
+                sm={6}
+                md={7}
+                lg={7}
+                xl={7}
+                xxl={7}
+                className="hero-text"
+              >
                 <p>Hello!</p>
                 <h1 className="hero-text_title">
                   I am <span className="clr-secondary">HRS</span> Pathan
@@ -50,12 +57,14 @@ const Hero = ({ formRef }) => {
                 />
               </Col>
               <Col
-                sm={12}
+                xs={4}
+                sm={6}
                 md={5}
                 lg={5}
                 xl={5}
                 xxl={5}
-                className="d-none d-md-block d-lg-block object-fit-contain"
+
+                // d-none d-md-block d-lg-block
               >
                 <img
                   src="images/heroFoto.png"

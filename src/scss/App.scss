@@ -1,6 +1,7 @@
 @use './abstracts'as *;
 @use 'sass:map';
 
+
 body {
   font-family: $ff-body;
   font-weight: $fw-regular;
@@ -39,14 +40,22 @@ body {
     background-color: $clr-main-primary;
     color: $clr-main-secondary;
   }
+
+  @include mq(md) {
+    font-size: .9rem;
+  }
+
+  @include mq(lg) {
+    font-size: 1rem;
+  }
+
 }
 
-;
 
 .btn-my-secondary {
   border: 1px solid $clr-main-primary;
   // outline: none;
-  background-color: transparent;
+  background-color: $clr-bcg-primary-light;
   border-radius: 0;
   color: $clr-main-primary;
 
@@ -54,9 +63,17 @@ body {
     background-color: $clr-main-primary;
     color: $clr-main-secondary;
   }
+
+  @include mq(md) {
+    font-size: .9rem;
+  }
+
+  @include mq(lg) {
+    font-size: 1rem;
+  }
+
 }
 
-;
 
 .clr-primary {
   color: $clr-main-primary;
@@ -96,21 +113,3 @@ p {
 }
 
 //SCSS demo
-$breakpoints: (xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-);
-
-@mixin mq($key) {
-  $size: map.get($breakpoints, $key);
-
-  @media (min-width: $size) {
-    @content;
-  }
-}
-
-
-// @include mq();

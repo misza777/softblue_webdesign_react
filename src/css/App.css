@@ -35,16 +35,36 @@ body::after {
   background-color: #F9F9F8;
   color: #00BBD5;
 }
+@media (min-width: 768px) {
+  .btn-my-primary {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 992px) {
+  .btn-my-primary {
+    font-size: 1rem;
+  }
+}
 
 .btn-my-secondary {
   border: 1px solid #F9F9F8;
-  background-color: transparent;
+  background-color: #06101A;
   border-radius: 0;
   color: #F9F9F8;
 }
 .btn-my-secondary:hover {
   background-color: #F9F9F8;
   color: #00BBD5;
+}
+@media (min-width: 768px) {
+  .btn-my-secondary {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 992px) {
+  .btn-my-secondary {
+    font-size: 1rem;
+  }
 }
 
 .clr-primary {

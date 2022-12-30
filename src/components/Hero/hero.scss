@@ -1,4 +1,4 @@
-@use "../../scss/abstracts" as *;
+@use "../../scss/abstracts"as *;
 
 .bcg-home {
     background-color: $clr-bcg-primary-light;
@@ -7,78 +7,165 @@
 .home-container {
     height: 85vh;
     position: relative;
-    background-image: 
-    url('/images/Shape_waves_2.svg'),
-    url('/images/Polygon_1.svg'),
-    url('/images/Polygon_2.svg');
+    background-image:
+        url('/images/Shape_waves_2.svg'),
+        url('/images/Polygon_1.svg'),
+        url('/images/Polygon_2.svg');
     background-size: 8%, 6%, 4%;
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 64% 32%, 35% 10%, 35% 65%;
-    
+
+
     & .hero-img {
-        transform: 
-        translateX(0%) translateY(0%);
-        z-index: 1;
+
+        z-index: 100;
+
+        @include mq(xs) {
+            transform: scale(1.6) translateY(50%) translateX(-25%);
+        }
+
+        @include mq(sm) {
+            transform: scale(1.1) translateY(10%) translateX(0%);
+        }
+
+        @include mq(md) {
+            // transform: scale(1.1) translateY(10%);
+        }
+
+        @include mq(lg) {
+            transform: scale(1) translateY(0%) translateY(-5%);
+        }
+
     }
 
     &::before {
         content: url('/images/Polygon_3.svg');
         color: $clr-main-secondary;
         position: absolute;
-        top: 45%;
-        left: 0;
+        // top: 45%;
+        // left: 0%;
         z-index: 0;
+
+
+        @include mq(xs) {
+            top: 45%;
+            left: -150%;
+        }
+
+        @include mq(sm) {
+            top: 45%;
+            left: -7%;
+        }
+
+        @include mq(md) {
+            top: 45%;
+            left: -5%;
+        }
+
+        @include mq(lg) {
+            top: 45%;
+            left: -3%;
+        }
+
+        @include mq(xl) {
+            top: 45%;
+            left: 0%;
+        }
     }
-    
+
     &::after {
         content: url('/images/Polygon_4.png');
         color: $clr-main-secondary;
         position: absolute;
-        right:-3%;
+        right: -3%;
         top: 30%;
         z-index: 0;
+
+        @include mq(xs) {
+            top: 45%;
+            right: 150%;
+        }
+
+        @include mq(sm) {
+            right: -3%;
+            top: 15%;
+        }
+
+        @include mq(md) {
+            right: -3%;
+            top: 30%;
+        }
+
     }
 
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 1;
-    
-    h1 {
-        font-size: 2.2rem;
-        font-weight: $fw-bold;
-        color: $clr-main-primary;
-        &:last-of-type {
-            margin-bottom: 1em;
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 1;
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: $fw-bold;
+            color: $clr-main-primary;
+
+            &:last-of-type {
+                margin-bottom: 1em;
+            }
+
+            @include mq(xs) {
+                font-size: 1.9rem;
+            }
+
+            @include mq(md) {
+                font-size: 2.2rem;
+            }
         }
-    }
+
         p {
             font-size: 1.2rem;
             font-weight: $fw-regular;
             color: $clr-main-primary;
+
+            @include mq(xs) {
+                font-size: 1rem;
+            }
+
+            @include mq(md) {
+                font-size: 1.2rem;
+            }
         }
 
         ol {
             margin-bottom: 2em;
             padding-left: 1.2em;
+
             li {
                 font-size: 1.2rem;
                 font-weight: $fw-regular;
                 color: $clr-main-primary;
                 margin-bottom: .2em;
+
                 &::marker {
                     padding-left: 0;
                 }
-            }
-    }
-}
 
-.wave-decoration {
-    position: absolute;
-    transform: scale(.5);
-    top: -20%;
-    left:-9%;
-}
+                @include mq(xs) {
+                    font-size: 1rem;
+                }
+
+                @include mq(md) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .wave-decoration {
+        position: absolute;
+        transform: scale(.5);
+        top: -20%;
+        left: -9%;
+    }
 }
