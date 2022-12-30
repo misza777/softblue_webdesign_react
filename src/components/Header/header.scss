@@ -7,8 +7,10 @@
 .my-link{
     color: $clr-main-primary;
     &:hover, &:focus, &:active {
-        color: $clr-main-secondary !important;
+        // color: $clr-main-secondary !important;
+        color: $clr-main-primary !important;
         text-decoration-line: line-through;
+        text-decoration-color: $clr-main-secondary;
         border: 0;
         outline:0;
     }
