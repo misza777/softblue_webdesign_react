@@ -19,8 +19,10 @@ const Comments = forwardRef((props, formRef) => {
   const [allComments, setAllComments] = useState([]);
   //form state
   const [commentSent, setCommentSent] = useState(false);
-  //toast state
+  //form toast state
   const [show, setShow] = useState(false);
+  //form validation state
+  const [validated, setValidated] = useState(false);
 
   //form refs
   const nameRef = useRef(null);
@@ -51,26 +53,39 @@ const Comments = forwardRef((props, formRef) => {
   }, [commentSent]);
 
   const submitHandler = async (e) => {
-    e.preventDefault();
-
-    const newComment = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      content: contentRef.current.value,
-    };
-
-    try {
-      const response = await axios.post(URLcomments, newComment);
-      if (response.status === 201) {
-        setCommentSent(true);
-        setShow(true);
-      }
-    } catch (error) {
-      console.log(error);
+    //form validation
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
+      setValidated(false);
     }
 
-    //clear form
-    e.target.reset();
+    setValidated(true);
+
+    if (form.checkValidity() === true) {
+      e.preventDefault();
+
+      const newComment = {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        content: contentRef.current.value,
+      };
+
+      try {
+        const response = await axios.post(URLcomments, newComment);
+        if (response.status === 201) {
+          setCommentSent(true);
+          setShow(true);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+
+      //clear form
+      e.target.reset();
+      setValidated(false);
+    }
   };
 
   return (
@@ -104,45 +119,73 @@ const Comments = forwardRef((props, formRef) => {
           <Row className="justify-content-md-center py-2 ">
             <Col xs={12} md={5}>
               <h3 className="form-title">Add comment</h3>
-              <Form onSubmit={submitHandler} ref={formRef}>
+              <Form
+                onSubmit={submitHandler}
+                noValidate
+                validated={validated}
+                ref={formRef}
+              >
                 <Row className="mt-4">
                   <Col>
-                    <Form.Group controlId="Your name">
+                    <Form.Group controlId="validationCustomName">
                       <FloatingLabel label="Your Name">
                         <Form.Control
+                          required
                           size="sm"
                           type="text"
                           aria-label="your name"
                           placeholder="Your Name"
                           ref={nameRef}
-                        ></Form.Control>
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Please enter your name.
+                        </Form.Control.Feedback>
                       </FloatingLabel>
                     </Form.Group>
                   </Col>
                   <Col>
-                    <Form.Group controlId="Email">
+                    <Form.Group controlId="validationCustomEmail">
                       <FloatingLabel label="Your Email">
                         <Form.Control
+                          required
                           type="email"
                           aria-label="your email"
                           placeholder="Your Email"
                           ref={emailRef}
-                        ></Form.Control>
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Please enter your email.
+                        </Form.Control.Feedback>
                       </FloatingLabel>
                     </Form.Group>
                   </Col>
                 </Row>
 
-                <Form.Group className="mt-3" controlId="Your Messages">
-                  <FloatingLabel label="Your Messages">
+                <Form.Group
+                  className="mt-3"
+                  controlId="validationCustomMessage"
+                >
+                  <FloatingLabel label="Your Message">
                     <Form.Control
+                      required
                       as="textarea"
                       aria-label="your message"
-                      placeholder="Your Messages"
+                      placeholder="Your Message"
                       style={{ height: "100px" }}
                       ref={contentRef}
-                    ></Form.Control>
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please enter your Message.
+                    </Form.Control.Feedback>
                   </FloatingLabel>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Check
+                    required
+                    label="Agree to terms and conditions"
+                    feedback="You must agree before submitting."
+                    feedbackType="invalid"
+                  />
                 </Form.Group>
                 <Button className="mt-3 btn-my-primary px-4" type="submit">
                   Send
