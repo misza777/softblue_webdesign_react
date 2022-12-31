@@ -42,9 +42,10 @@ const Hero = ({ formRef }) => {
                   <li>Front-end Design</li>
                 </ol>
                 <div className="d-flex hero-text-btns">
-                  <button className="btn btn-my-primary px-3">Read More</button>
+                  <button className="btn btn-my-primary px-4 px-sm-3">Read More</button>
+
                   <button
-                    className="btn btn-my-secondary mx-3 px-3"
+                    className="btn btn-my-secondary mx-4 mx-sm-3 px-3"
                     onClick={handleScroll}
                   >
                     Contact Us
@@ -64,7 +65,6 @@ const Hero = ({ formRef }) => {
                 xl={5}
                 xxl={5}
 
-                // d-none d-md-block d-lg-block
               >
                 <img
                   src="images/heroFoto.png"

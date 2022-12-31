@@ -13,20 +13,43 @@ body {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
     position: absolute;
-    bottom: -5%;
-    left: 0;
     z-index: 0;
-    transform: scale(.8)
   }
 
   &::after {
     content: url('/images/shape_dots.png');
     color: $clr-main-secondary;
     position: absolute;
-    top: -3%;
-    right: -1%;
     z-index: 0;
-    transform: scale(.8)
+
+  }
+
+  @include mq(xs) {
+    &::before {
+      bottom: -8%;
+      left: -4%;
+      transform: scale(.6);
+    }
+
+    &::after {
+      top: -6%;
+      right: -5%;
+      transform: scale(.6);
+    }
+  }
+
+  @include mq(sm) {
+    &::before {
+      bottom: -5%;
+      left: 0%;
+      transform: scale(.8);
+    }
+
+    &::after {
+      top: -5%;
+      right: -1%;
+      transform: scale(.8);
+    }
   }
 }
 
@@ -51,10 +74,8 @@ body {
 
 }
 
-
 .btn-my-secondary {
   border: 1px solid $clr-main-primary;
-  // outline: none;
   background-color: $clr-bcg-primary-light;
   border-radius: 0;
   color: $clr-main-primary;
@@ -73,7 +94,6 @@ body {
   }
 
 }
-
 
 .clr-primary {
   color: $clr-main-primary;

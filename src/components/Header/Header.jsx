@@ -29,11 +29,11 @@ const Header = ({ formRef }) => {
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {/* softblue_webdesign_react */}
-        <Navbar.Collapse id="responsive-navbar-nav" className="clr-primary">
+        <Navbar.Collapse id="responsive-navbar-nav" className="">
           <Nav className="ms-auto">
-            <LinkContainer to="/" active>
+            <LinkContainer to="/">
               <Nav.Link
-                active
+                active={true}
                 className="mx-md-1 mx-lg-2 my-link"
                 aria-current="page"
                 to="/"

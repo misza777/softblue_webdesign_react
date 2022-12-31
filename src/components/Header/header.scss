@@ -10,7 +10,6 @@
     &:hover,
     &:focus,
     &:active {
-        // color: $clr-main-secondary !important;
         color: $clr-main-primary !important;
         text-decoration-line: line-through;
         text-decoration-color: $clr-main-secondary;
@@ -32,6 +31,7 @@
 button.navbar-toggler {
     color: $clr-main-primary;
     border: 1px solid $clr-main-primary;
+    z-index: 2;
 
     &>span {
         color: $clr-main-primary !important;
@@ -41,4 +41,6 @@ button.navbar-toggler {
         color: $clr-main-secondary;
         border-color: $clr-main-secondary;
     }
+
+    
 }
