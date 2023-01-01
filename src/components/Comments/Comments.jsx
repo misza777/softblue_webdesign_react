@@ -90,7 +90,7 @@ const Comments = forwardRef((props, formRef) => {
   return (
     <>
       <CommentItems data={allComments} />
-      <div className="container-form-bcg pb-2 position-relative">
+      <div className="container-form-bcg px-2 position-relative">
         <Container>
           <Col xs={6}>
             <ToastContainer className="p-" position="top-center">
@@ -179,14 +179,14 @@ const Comments = forwardRef((props, formRef) => {
                   </FloatingLabel>
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Check
+                  <Form.Check className="py-1"
                     required
                     label="Agree to terms and conditions"
                     feedback="You must agree before submitting."
                     feedbackType="invalid"
                   />
                 </Form.Group>
-                <Button className="mt-3 btn-my-primary px-4" type="submit">
+                <Button className="mt-2 btn-my-primary px-4" type="submit">
                   Send
                 </Button>
               </Form>

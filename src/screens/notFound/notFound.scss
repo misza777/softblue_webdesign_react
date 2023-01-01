@@ -7,16 +7,11 @@
 .notFound-body {
     height: 77vh;
     position: relative;
-    // display:flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
-    // align-items: center;
 
     & img {
         position: absolute;
         top: 20%;
         transform: scale(.6);
-        // object-fit: cover;
     }
 }
 

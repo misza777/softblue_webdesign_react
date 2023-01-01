@@ -35,7 +35,7 @@ const CommentItems = ({ data }) => {
 
   return (
     <>
-      <div className="comments-container">
+      <div className="comments-container pt-3 pt-md-2">
         <Container>
           <Col
             md={5}
@@ -73,6 +73,7 @@ const CommentItems = ({ data }) => {
                 </div>
               ))}
             </div>
+            <div className="py-2">
             <ReactPaginate
               pageClassName="page-item"
               pageLinkClassName="page-link"
@@ -93,6 +94,7 @@ const CommentItems = ({ data }) => {
               containerClassName="pagination"
               activeClassName="active"
             />
+            </div>
           </Col>
         </Container>
       </div>
