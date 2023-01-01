@@ -16,8 +16,8 @@ export default function notFoundPage() {
             <div className="errorPage-reason">
               <h2>Oops!</h2>
               <h3>
-                Much like a Space Sloth, requested page or post does not exist.
-                Sorry about that!
+                Much like a Space Sloth, requested page does not exist. Sorry
+                about that!
               </h3>
             </div>
           </div>
