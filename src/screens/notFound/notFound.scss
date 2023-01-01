@@ -2,25 +2,31 @@
 
 .container-home {
     background-color: $clr-bcg-primary-light;
-    // heigt: 50vh;
 }
 
 .notFound-body {
-    width: 100%;
-    object-fit: cover;
+    height: 77vh;
+    position: relative;
+    // display:flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: center;
 
     & img {
-        transform: scale(.8);
+        position: absolute;
+        top: 20%;
+        transform: scale(.6);
+        // object-fit: cover;
     }
 }
 
 .errorPage-reason {
+    height: 15vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     text-align: center;
-    // margin: 10px 10px;
     font-size: 1rem;
 }
 

@@ -1,3 +1,5 @@
+// i copied this component to Comments component
+
 // import React from "react";
 // import { useState, useRef } from "react";
 // import {

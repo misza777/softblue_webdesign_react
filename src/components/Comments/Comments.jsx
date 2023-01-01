@@ -58,13 +58,13 @@ const Comments = forwardRef((props, formRef) => {
     if (form.checkValidity() === false) {
       e.preventDefault();
       e.stopPropagation();
-      setValidated(false);
+      setValidated(true);
+      return;
     }
-
-    setValidated(true);
 
     if (form.checkValidity() === true) {
       e.preventDefault();
+      setValidated(false);
 
       const newComment = {
         name: nameRef.current.value,
@@ -84,7 +84,6 @@ const Comments = forwardRef((props, formRef) => {
 
       //clear form
       e.target.reset();
-      setValidated(false);
     }
   };
 
